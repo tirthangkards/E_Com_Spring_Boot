@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head th:replace="~{base :: base-head}">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login & Signup Form</title>
+</head>
+<body>
+	<form th:action="@{/shop/register}" method="post" th:object="${user}">
+	<input type="hidden" name="id" th:field="*{id}" />
+		<div class="container register">
+			<div class="row">
+				<div class="col-md-3 register-left">
+					<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+					<h3>Welcome</h3>
+					<p>You are 30 seconds away from earning your own money!</p>
+					<input type="submit" name="" value="Login" /><br />
+				</div>
+				<div class="col-md-9 register-right">
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel"
+							aria-labelledby="home-tab">
+							<h1 class="register-heading">WELCOME</h1>
+							<div class="row register-form">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" class="form-control"
+											placeholder="First Name *" name="firstName" required th:field="*{firstName}" />
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" 
+											placeholder="Last Name *" name="lastName" required th:field="*{lastName}" />
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control"
+											placeholder="Password *" name="password" required th:field="*{password}" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="email" class="form-control"
+											placeholder="Your Email *" name="email" required th:field="*{email}" />
+									</div>
+									<div class="form-group">
+										<input type="text" minlength="10" maxlength="10" class="form-control"
+											placeholder="Your Phone *" name="phone" required th:field="*{phone}" />
+									</div>
+									<div class="form-group">
+										<input type="text"	
+											class="form-control" placeholder="City *" name="city" required th:field="*{city}" />
+									</div>
+									<button type="submit" class="btnRegister">REGISTER</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+	</form>
+</body>
+</html>

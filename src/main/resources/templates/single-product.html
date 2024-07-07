@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="~{base :: base-head}">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div th:replace="preloader :: preloader"></div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <div th:replace="~{header :: header}"></div>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading" id="top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="inner-content">
+              <h2 style="color: black;">Single Product Page</h2>
+              <span style="color: black;">Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Product Area Starts ***** -->
+    <section class="section" id="product">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="left-images" style="width: 350px; margin-left: 150px">
+              <img th:src="'data:image/png;base64,'+${blob.getImgData(product.image)}" height="500px" width="50px" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="right-content">
+              <h4 th:text="${product.name}"></h4>
+              <span class="price" th:text="₹+' '+${product.price}"></span>
+<!--               <ul class="stars"> -->
+<!--                 <li><i class="fa fa-star"></i></li> -->
+<!--                 <li><i class="fa fa-star"></i></li> -->
+<!--                 <li><i class="fa fa-star"></i></li> -->
+<!--                 <li><i class="fa fa-star"></i></li> -->
+<!--                 <li><i class="fa fa-star"></i></li> -->
+<!--               </ul> -->
+              <div class="quote">
+                <i class="fa fa-quote-left"></i>
+                <p th:text="${product.description}"></p>
+              </div>
+              <div class="quantity-content">
+                <div class="left-content">
+                  <h6>No. of Orders</h6>
+                </div>
+                <div class="right-content">
+                  <div class="quantity buttons_added">
+                    <input type="button" value="-" class="minus" /><input
+                      type="number"
+                      step="1"
+                      min="1"
+                      max=""
+                      name="quantity"
+                      value="1"
+                      title="Qty"
+                      class="input-text qty text"
+                      size="4"
+                      pattern=""
+                      inputmode=""
+                    /><input type="button" value="+" class="plus" />
+                  </div>
+                </div>
+              </div>
+              <div class="total">
+                <h4>Total: $210.00</h4>
+                <div class="main-border-button">
+                  <a href="#">Add To Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Product Area Ends ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <div th:replace="~{footer::footer}"></div>
+    <!-- ***** Footer End ***** -->
+
+    <!-- ***** Scripts Start ***** -->
+    <div th:replace="~{scripts :: scripts}"></div>
+    <!-- ***** Scripts End ***** -->
+  </body>
+</html>
